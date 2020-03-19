@@ -7,28 +7,6 @@
 		},
 		"annotations": [],
 		"type": "CosmosDbSqlApiCollection",
-		"schema": {
-			"type": "object",
-			"properties": {
-				"value": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"fiscalPeriodEnd": {
-								"type": "string"
-							},
-							"year": {
-								"type": "integer"
-							},
-							"businessNumber": {
-								"type": "string"
-							}
-						}
-					}
-				}
-			}
-		},
 		"typeProperties": {
 			"collectionName": "statestore"
 		}
