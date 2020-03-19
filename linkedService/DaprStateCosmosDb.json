@@ -1,0 +1,12 @@
+{
+	"name": "DaprStateCosmosDb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "CosmosDb",
+		"typeProperties": {
+			"connectionString": "AccountEndpoint=https://waybase-dapr.documents.azure.com:443/;Database=dapr;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIldBWUJBU0VfMDA2MjU0ODUtYTg4My00OGY3LTkyYjAtNzUyNGE3ZmE3NzM0Ig0KfQ=="
+		}
+	}
+}

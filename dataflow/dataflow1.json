@@ -1,0 +1,42 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "CraInputCsv",
+						"type": "DatasetReference"
+					},
+					"name": "CRA"
+				},
+				{
+					"dataset": {
+						"referenceName": "DaprState",
+						"type": "DatasetReference"
+					},
+					"name": "State"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DaprState",
+						"type": "DatasetReference"
+					},
+					"name": "StateSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumns"
+				},
+				{
+					"name": "JsonOutput"
+				}
+			],
+			"script": "source(output(\n\t\tbusinessNumber as string,\n\t\tyear as integer,\n\t\tfiscalPeriodEnd as string,\n\t\tformId as integer,\n\t\tdesignationCode as string,\n\t\tcategoryCode as integer,\n\t\tlegalName as string,\n\t\taccountName as string,\n\t\tregistrationDate as string,\n\t\t{address.street} as string,\n\t\t{address.city} as string,\n\t\t{address.province} as string,\n\t\t{address.postalCode} as string,\n\t\t{address.country} as string,\n\t\tcontactName as string,\n\t\tcontactPhone as string,\n\t\tcontactEmail as string,\n\t\tcontactUrl as string,\n\t\t{fields.300} as integer,\n\t\t{fields.305} as integer,\n\t\t{fields.310} as integer,\n\t\t{fields.315} as integer,\n\t\t{fields.320} as integer,\n\t\t{fields.325} as integer,\n\t\t{fields.330} as integer,\n\t\t{fields.335} as integer,\n\t\t{fields.340} as integer,\n\t\t{fields.345} as integer,\n\t\t{fields.370} as integer,\n\t\t{fields.380} as integer,\n\t\t{fields.390} as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\twildcardPaths:['2018-test.csv']) ~> CRA\nsource(output(\n\t\tvalue as (fiscalPeriodEnd as string, year as string, businessNumber as string)[]\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'document',\n\tsystemColumns: true,\n\tthroughput: 400) ~> State\nCRA derive(id = concat('charity||', businessNumber),\n\t\tvalue = @(businessNumber=businessNumber,\n\t\tyear=year,\n\t\tfiscalPeriodEnd=fiscalPeriodEnd)) ~> DerivedColumns\nDerivedColumns select(mapColumn(\n\t\tid,\n\t\tvalue\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> JsonOutput\nJsonOutput sink(input(\n\t\tvalue as (fiscalPeriodEnd as string, year as string, businessNumber as string)[]\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'document',\n\tpartitionKey: ['/id'],\n\tthroughput: 400,\n\tmapColumn(\n\t\tid,\n\t\tvalue\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> StateSink"
+		}
+	}
+}

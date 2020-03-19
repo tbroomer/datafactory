@@ -1,0 +1,148 @@
+{
+	"name": "CraInputCsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "charity"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "businessNumber",
+				"type": "String"
+			},
+			{
+				"name": "year",
+				"type": "String"
+			},
+			{
+				"name": "fiscalPeriodEnd",
+				"type": "String"
+			},
+			{
+				"name": "formId",
+				"type": "String"
+			},
+			{
+				"name": "designationCode",
+				"type": "String"
+			},
+			{
+				"name": "categoryCode",
+				"type": "String"
+			},
+			{
+				"name": "legalName",
+				"type": "String"
+			},
+			{
+				"name": "accountName",
+				"type": "String"
+			},
+			{
+				"name": "registrationDate",
+				"type": "String"
+			},
+			{
+				"name": "address.street",
+				"type": "String"
+			},
+			{
+				"name": "address.city",
+				"type": "String"
+			},
+			{
+				"name": "address.province",
+				"type": "String"
+			},
+			{
+				"name": "address.postalCode",
+				"type": "String"
+			},
+			{
+				"name": "address.country",
+				"type": "String"
+			},
+			{
+				"name": "contactName",
+				"type": "String"
+			},
+			{
+				"name": "contactPhone",
+				"type": "String"
+			},
+			{
+				"name": "contactEmail",
+				"type": "String"
+			},
+			{
+				"name": "contactUrl",
+				"type": "String"
+			},
+			{
+				"name": "fields.300",
+				"type": "String"
+			},
+			{
+				"name": "fields.305",
+				"type": "String"
+			},
+			{
+				"name": "fields.310",
+				"type": "String"
+			},
+			{
+				"name": "fields.315",
+				"type": "String"
+			},
+			{
+				"name": "fields.320",
+				"type": "String"
+			},
+			{
+				"name": "fields.325",
+				"type": "String"
+			},
+			{
+				"name": "fields.330",
+				"type": "String"
+			},
+			{
+				"name": "fields.335",
+				"type": "String"
+			},
+			{
+				"name": "fields.340",
+				"type": "String"
+			},
+			{
+				"name": "fields.345",
+				"type": "String"
+			},
+			{
+				"name": "fields.370",
+				"type": "String"
+			},
+			{
+				"name": "fields.380",
+				"type": "String"
+			},
+			{
+				"name": "fields.390",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
