@@ -81,12 +81,6 @@
 						"300": {
 							"type": "integer"
 						},
-						"305": {
-							"type": "integer"
-						},
-						"310": {
-							"type": "integer"
-						},
 						"315": {
 							"type": "integer"
 						},
@@ -109,29 +103,7 @@
 									"type": "string"
 								},
 								"percentage": {
-									"type": "number"
-								}
-							}
-						},
-						"1210": {
-							"type": "object",
-							"properties": {
-								"code": {
-									"type": "string"
-								},
-								"percentage": {
-									"type": "number"
-								}
-							}
-						},
-						"1220": {
-							"type": "object",
-							"properties": {
-								"code": {
-									"type": "string"
-								},
-								"percentage": {
-									"type": "number"
+									"type": "integer"
 								}
 							}
 						},
@@ -161,15 +133,6 @@
 						"2400": {
 							"type": "string"
 						},
-						"2550": {
-							"type": "string"
-						},
-						"2650": {
-							"type": "string"
-						},
-						"2660": {
-							"type": "string"
-						},
 						"2700": {
 							"type": "string"
 						},
@@ -197,16 +160,10 @@
 						"4120": {
 							"type": "integer"
 						},
-						"4140": {
-							"type": "integer"
-						},
 						"4155": {
 							"type": "integer"
 						},
 						"4160": {
-							"type": "integer"
-						},
-						"4166": {
 							"type": "integer"
 						},
 						"4170": {
@@ -221,9 +178,6 @@
 						"4310": {
 							"type": "integer"
 						},
-						"4320": {
-							"type": "integer"
-						},
 						"4330": {
 							"type": "integer"
 						},
@@ -233,19 +187,7 @@
 						"4500": {
 							"type": "integer"
 						},
-						"4510": {
-							"type": "integer"
-						},
-						"4530": {
-							"type": "integer"
-						},
-						"4540": {
-							"type": "integer"
-						},
 						"4550": {
-							"type": "integer"
-						},
-						"4560": {
 							"type": "integer"
 						},
 						"4580": {
@@ -255,9 +197,6 @@
 							"type": "integer"
 						},
 						"4620": {
-							"type": "integer"
-						},
-						"4630": {
 							"type": "integer"
 						},
 						"4640": {
@@ -278,9 +217,6 @@
 						"4820": {
 							"type": "integer"
 						},
-						"4830": {
-							"type": "integer"
-						},
 						"4840": {
 							"type": "integer"
 						},
@@ -296,17 +232,11 @@
 						"4880": {
 							"type": "integer"
 						},
-						"4891": {
-							"type": "integer"
-						},
 						"4900": {
 							"type": "integer"
 						},
 						"4920": {
 							"type": "integer"
-						},
-						"4930": {
-							"type": "string"
 						},
 						"4950": {
 							"type": "integer"
@@ -317,13 +247,7 @@
 						"5010": {
 							"type": "integer"
 						},
-						"5020": {
-							"type": "integer"
-						},
 						"5040": {
-							"type": "integer"
-						},
-						"5050": {
 							"type": "integer"
 						},
 						"5100": {
@@ -340,12 +264,6 @@
 						},
 						"5830": {
 							"type": "string"
-						},
-						"5900": {
-							"type": "integer"
-						},
-						"5910": {
-							"type": "integer"
 						}
 					}
 				},
